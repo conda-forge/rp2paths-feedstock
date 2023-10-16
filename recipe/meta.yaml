@@ -1,5 +1,5 @@
 {% set name = "rp2paths" %}
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/brsynth/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 6b62bc5b256e8e541839baf675c28bcc0683bbb86b7ecd64f6705686c4a138ba
+  sha256: fcf843580ab12d8deba09399b94cd065a799ead63420920482858a0e8b734407
 
 build:
   number: 0
