@@ -23,7 +23,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - openjdk
-    - rdkit
+    - rdkit <2024.09
     - pandas
     - pydotplus
     - graphviz
