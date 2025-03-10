@@ -10,18 +10,19 @@ source:
   sha256: fcf843580ab12d8deba09399b94cd065a799ead63420920482858a0e8b734407
 
 build:
-  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install -vv .
+  number: 2
+  script: {{ PYTHON }} -m pip install -vv . --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - openjdk
-    - rdkit
+    - rdkit <2024.09
     - pandas
     - pydotplus
     - graphviz
@@ -35,6 +36,7 @@ test:
     - rp2paths
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - python -m rp2paths --help
     - cd tests
