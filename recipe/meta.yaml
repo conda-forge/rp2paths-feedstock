@@ -10,7 +10,7 @@ source:
   sha256: fcf843580ab12d8deba09399b94cd065a799ead63420920482858a0e8b734407
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install -vv .
 
@@ -21,7 +21,7 @@ requirements:
   run:
     - python >=3.6
     - openjdk
-    - rdkit
+    - rdkit <2024.09
     - pandas
     - pydotplus
     - graphviz
