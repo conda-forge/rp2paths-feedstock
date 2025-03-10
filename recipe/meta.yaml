@@ -12,17 +12,17 @@ source:
 build:
   number: 2
   noarch: python
-  script: {{ PYTHON }} -m pip install -vv .
+  script: {{ PYTHON }} -m pip install -vv . --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
-    - rdkit <2024.09
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - openjdk
-    - rdkit <2024.09
+    - rdkit
     - pandas
     - pydotplus
     - graphviz
@@ -36,6 +36,7 @@ test:
     - rp2paths
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - python -m rp2paths --help
     - cd tests
