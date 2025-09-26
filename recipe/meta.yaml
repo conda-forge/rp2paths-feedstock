@@ -28,6 +28,7 @@ requirements:
     - graphviz
     - python-graphviz
     - lxml
+    - brs_utils
 
 test:
   source_files:
