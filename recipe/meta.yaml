@@ -21,14 +21,14 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - openjdk
     - rdkit <2024.09
+    - openjdk
     - pandas
     - pydotplus
     - graphviz
     - python-graphviz
     - lxml
-    - brs_utils
+    - brs_utils >=1.24.0
 
 test:
   source_files:
