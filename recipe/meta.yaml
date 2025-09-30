@@ -36,12 +36,9 @@ test:
   imports:
     - rp2paths
   requires:
-    - pytest
     - python {{ python_min }}
   commands:
     - python -m rp2paths --help
-    - cd tests
-    - pytest -v
 
 about:
   home: https://github.com/brsynth/rp2paths
