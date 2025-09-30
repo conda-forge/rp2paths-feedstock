@@ -1,5 +1,5 @@
 {% set name = "rp2paths" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/brsynth/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 560df0af0877e8bd03514abfe48c7f5b12dfcc5f845720b12e8db9eaaca71506
+  sha256: 7624e18aa11d60cfa3fc956eeab48ff0decfa0bc5a48616e21d65caa0a3e3aa4
 
 build:
   noarch: python
@@ -21,14 +21,14 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - openjdk
     - rdkit <2024.09
+    - openjdk
     - pandas
     - pydotplus
     - graphviz
     - python-graphviz
     - lxml
-    - brs_utils
+    - brs_utils >=1.24.0
 
 test:
   source_files:
@@ -36,12 +36,9 @@ test:
   imports:
     - rp2paths
   requires:
-    - pytest
     - python {{ python_min }}
   commands:
     - python -m rp2paths --help
-    - cd tests
-    - pytest -v
 
 about:
   home: https://github.com/brsynth/rp2paths
